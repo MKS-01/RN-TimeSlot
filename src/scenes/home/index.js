@@ -1,19 +1,21 @@
 import React from 'react';
 import {View, Text, Button} from 'react-native';
+import {RootSafeAreaView, RootScrollView} from '_styles/rootView';
 import {useNavigation} from '@react-navigation/native';
+import SlotCard from '_atoms/SlotCard';
 
 const HomeScreen = () => {
   const navigation = useNavigation();
   return (
-    <View>
-      <Text>shs</Text>
-
-      <Text style={{fontSize: 30}}>This is the HomeScreen screen!</Text>
-      <Button
-        onPress={() => navigation.navigate('Details')}
-        title="Open Modal"
-      />
-    </View>
+    <RootSafeAreaView>
+      <RootScrollView>
+        {/* <Button
+          onPress={() => navigation.navigate('Details')}
+          title="Open Modal"
+        /> */}
+        <SlotCard />
+      </RootScrollView>
+    </RootSafeAreaView>
   );
 };
 

@@ -1,11 +1,14 @@
 import React from 'react';
 import {View, Text} from 'react-native';
+import {RootSafeAreaView, RootView} from '_styles/rootView';
 
 const Photo = () => {
   return (
-    <View>
-      <Text>Photo</Text>
-    </View>
+    <RootSafeAreaView>
+      <RootView>
+        <Text>Photo</Text>
+      </RootView>
+    </RootSafeAreaView>
   );
 };
 
