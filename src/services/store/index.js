@@ -9,3 +9,16 @@ export const StateProvider = ({reducer, initialState, children}) => (
 );
 
 export const useStateValue = () => useContext(StateContext);
+
+export const reducer = (slotState, action) => {
+  switch (action.type) {
+    case 'addDetails':
+      return {
+        ...slotState,
+        // rowPosition: action.newRowPos,
+      };
+
+    default:
+      return slotState;
+  }
+};

@@ -29,7 +29,7 @@ function MainStackScreen() {
       })}
       tabBarOptions={{
         activeTintColor: WHITE,
-        inactiveTintColor: '#000000',
+        inactiveTintColor: '#212121',
         style: {
           backgroundColor: PRIMARY,
         },

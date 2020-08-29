@@ -6,6 +6,7 @@ import SplashScreen from '_scenes/splash';
 import AuthNavigator from './auth-navigator';
 import AppNavigator from './app-navigator';
 import {storeValue, retriveValue, removeValue} from '_utils/localStorage';
+import {StateProvider, reducer} from '_services/store';
 
 export default function App() {
   const [firstLaunch, setFirstLaunch] = React.useState(null);
@@ -38,6 +39,24 @@ export default function App() {
       userToken: null,
     },
   );
+
+  const initialState = {
+    slotData: [
+      {id: 1, slot: '9AM - 10AM', icon: 'clock-time-nine', details: []},
+      {
+        id: 2,
+        slot: '10AM - 11AM',
+        icon: 'clock-time-ten',
+        details: [{firstName: 'test', lastName: 'dev', phone: 643743}],
+      },
+      {id: 3, slot: '11AM - 12AM', icon: 'clock-time-eleven', details: []},
+      {id: 4, slot: '12AM - 1PM', icon: 'clock-time-twelve', details: []},
+      {id: 5, slot: '1PM - 2PM', icon: 'clock-time-one', details: []},
+      {id: 6, slot: '2PM - 3PM', icon: 'clock-time-two', details: []},
+      {id: 7, slot: '3PM - 4PM', icon: 'clock-time-three', details: []},
+      {id: 8, slot: '4PM - 5PM', icon: 'clock-time-four', details: []},
+    ],
+  };
 
   React.useEffect(() => {
     const bootstrapAsync = async () => {
@@ -108,10 +127,12 @@ export default function App() {
       <NavigationContainer ref={navigationRef}>
         {state.isLoading ? (
           <SplashScreen />
-        ) : state.userToken == 'null' ? (
+        ) : state.userToken === 'null' ? (
           <AuthNavigator firstLaunch={firstLaunch} />
         ) : (
-          <AppNavigator />
+          <StateProvider initialState={initialState} reducer={reducer}>
+            <AppNavigator />
+          </StateProvider>
         )}
       </NavigationContainer>
     </AuthContext.Provider>
