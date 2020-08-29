@@ -1,24 +1,21 @@
 import React from 'react';
-import {View, Text, Button} from 'react-native';
-import {RootSafeAreaView, RootScrollView} from '_styles/rootView';
-import {useNavigation} from '@react-navigation/native';
+import {FlatList} from 'react-native';
+import {RootSafeAreaView, RootView} from '_styles/rootView';
 import SlotCard from '_organisms/SlotCard';
-
-// import Icon from 'react-native-vector-icons/FontAwesome';
-// const myIcon = <Icon name="rocket" size={30} color="#900" />;
+import {sampleData} from './data';
 
 const HomeScreen = () => {
-  const navigation = useNavigation();
+  const renderItem = (value) => <SlotCard data={value} />;
+
   return (
     <RootSafeAreaView>
-      <RootScrollView>
-        {/* {myIcon} */}
-        {/* <Button
-          onPress={() => navigation.navigate('Details')}
-          title="Open Modal"
-        /> */}
-        <SlotCard />
-      </RootScrollView>
+      <RootView>
+        <FlatList
+          data={sampleData}
+          renderItem={renderItem}
+          keyExtractor={(item) => item.id.toString()}
+        />
+      </RootView>
     </RootSafeAreaView>
   );
 };

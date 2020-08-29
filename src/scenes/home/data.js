@@ -1,4 +1,4 @@
-export const sample = [
+export const sampleData = [
   {id: 1, slot: '9AM - 10AM', icon: 'clock-time-nine', details: []},
   {
     id: 2,
