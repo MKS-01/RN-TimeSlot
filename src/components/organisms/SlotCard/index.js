@@ -10,9 +10,9 @@ const SlotCard = ({data}) => {
   const {details} = item;
   return (
     <Card
-      booked={details.length > 0 ? true : false}
-      onPress={() => navigation.navigate('Details')}>
-      <Icon icon={item.icon} color={details.length > 0 ? true : false} />
+      booked={details !== null ? true : false}
+      onPress={() => navigation.navigate('Details', {data: item})}>
+      <Icon icon={item.icon} color={details !== null ? true : false} />
       <Text> {item.slot}</Text>
     </Card>
   );

@@ -8,11 +8,11 @@ const HomeScreen = () => {
   const [{slotData}] = useStateValue();
   const renderItem = (value) => <SlotCard data={value} />;
 
-  console.log('test', slotData);
   return (
     <RootSafeAreaView>
       <RootView>
         <FlatList
+          style={{marginTop: 10}}
           data={slotData}
           renderItem={renderItem}
           keyExtractor={(item) => item.id.toString()}
