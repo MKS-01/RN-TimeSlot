@@ -1,11 +1,12 @@
 import React from 'react';
-import {View, Text} from 'react-native';
+import {Text} from 'react-native';
+import {RootSafeAreaView} from '_styles/rootView';
 
 const Login = () => {
   return (
-    <View>
+    <RootSafeAreaView>
       <Text>Login</Text>
-    </View>
+    </RootSafeAreaView>
   );
 };
 
