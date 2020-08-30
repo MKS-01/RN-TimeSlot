@@ -58,7 +58,7 @@ Errors comes while running iOS app due to duplicate of vector-icons fonts then f
 <!-- ![](./screenshots/demo.gif) -->
 
 <div>
-<img src="./screenshots/demo.gif" alt="Gallery Modal" width="230" height="508">
+<img src="./screenshots/demo.gif" alt="Gallery Modal" width="230" height="490">
 </div>
 
 <div>
