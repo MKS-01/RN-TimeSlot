@@ -6,7 +6,7 @@ import {useStateValue} from '_services/store';
 import {storeValue, retriveValue, removeValue} from '_utils/localStorage';
 
 const HomeScreen = () => {
-  const [data, setData] = React.useState('');
+  const [data, setData] = React.useState(null);
 
   const [{slotData}, dispatch] = useStateValue();
 
@@ -17,8 +17,10 @@ const HomeScreen = () => {
 
       if (typeof prevsData !== 'undefined') {
         setData(JSON.parse(prevsData));
-      } else {
-        setData(slotData);
+        dispatch({
+          type: 'addDetails',
+          newSlotData: JSON.parse(prevsData),
+        });
       }
     };
 
@@ -32,8 +34,7 @@ const HomeScreen = () => {
       <RootView>
         <FlatList
           style={{marginTop: 10}}
-          // data={slotData}
-          data={data}
+          data={slotData}
           renderItem={renderItem}
           keyExtractor={(item) => item.id.toString()}
         />

@@ -7,6 +7,7 @@ const Login = () => {
   const [username, setUsername] = React.useState('test');
   const [password, setPassword] = React.useState('test');
   const {signIn} = useAuthValue();
+
   return (
     <RootSafeAreaView>
       <RootView>
