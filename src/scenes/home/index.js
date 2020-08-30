@@ -17,10 +17,9 @@ const HomeScreen = () => {
 
       if (typeof prevsData !== 'undefined') {
         setData(JSON.parse(prevsData));
-        console.log('prevsData', prevsData);
+      } else {
+        setData(slotData);
       }
-
-      setData(slotData);
     };
 
     initialAsync();
