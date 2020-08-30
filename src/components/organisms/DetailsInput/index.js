@@ -2,7 +2,6 @@ import React, {useState, useEffect} from 'react';
 import {View} from 'react-native';
 import {Input, TouchableBTN, Text, BTNContainer} from '_styles/DetailsModal';
 import {GRAY_DARK} from '_styles/colors';
-import {useNavigation} from '@react-navigation/native';
 import * as RootNavigation from '_navigations/root-navigation';
 import {useStateValue} from '_services/store';
 
@@ -45,14 +44,25 @@ const DetailsInput = ({data}) => {
         <BTN type={'CANCEL'} />
         <BTN
           type={'SAVE'}
-          data={[
-            {
-              id: data.id,
-              slot: data.slot,
-              icon: data.icon,
-              details: {firstName, lastName, phone},
-            },
-          ]}
+          data={
+            firstName && lastName
+              ? [
+                  {
+                    id: data.id,
+                    slot: data.slot,
+                    icon: data.icon,
+                    details: {firstName, lastName, phone},
+                  },
+                ]
+              : [
+                  {
+                    id: data.id,
+                    slot: data.slot,
+                    icon: data.icon,
+                    details: null,
+                  },
+                ]
+          }
         />
       </BTNContainer>
     </View>
@@ -81,7 +91,6 @@ const BTN = (props) => {
       type: 'addDetails',
       newSlotData: tempData,
     });
-    console.log('knsknks', tempData);
 
     RootNavigation.navigate('Home');
   };
