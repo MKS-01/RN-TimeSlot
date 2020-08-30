@@ -55,6 +55,8 @@ https://reactnavigation.org/
 
 Errors comes while running iOS app due to duplicate of vector-icons fonts then follow: https://github.com/oblador/react-native-vector-icons/issues/1074
 
+![](./screenshots/demo.gif)
+
 <div>
 <img src="./screenshots/1.png" alt="Login" width="277" height="508">
 <img src="./screenshots/2.png" alt="Home" width="277" height="508">
