@@ -5,7 +5,7 @@ import SlotCard from '_organisms/SlotCard';
 import {useStateValue} from '_services/store';
 
 const HomeScreen = () => {
-  const [{slotData}] = useStateValue();
+  const [{slotData}, dispatch] = useStateValue();
   const renderItem = (value) => <SlotCard data={value} />;
 
   return (

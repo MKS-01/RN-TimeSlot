@@ -10,15 +10,16 @@ export const StateProvider = ({reducer, initialState, children}) => (
 
 export const useStateValue = () => useContext(StateContext);
 
-export const reducer = (slotState, action) => {
+export const reducer = (initialState, action) => {
   switch (action.type) {
     case 'addDetails':
       return {
-        ...slotState,
-        // rowPosition: action.newRowPos,
+        ...initialState,
+        // console.log(action.newSlotData)
+        slotData: action.newSlotData,
       };
 
     default:
-      return slotState;
+      return initialState;
   }
 };
