@@ -1,4 +1,4 @@
-### Library used
+## Library used
 
 - Navigation : React-Navigation 5.x.x
 - CSS: styled-components 5.1.1
@@ -58,7 +58,7 @@ Errors comes while running iOS app due to duplicate of vector-icons fonts then f
 <!-- ![](./screenshots/demo.gif) -->
 
 <div>
-<img src="./screenshots/demo.gif" alt="Gallery Modal" width="277" height="508">
+<img src="./screenshots/demo.gif" alt="Gallery Modal" width="265" height="508">
 </div>
 
 <div>
