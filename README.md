@@ -1,7 +1,7 @@
 ### Library used
 
 - Navigation : React-Navigation 5.x.x
-- CSS: styled-components 5.1.0
+- CSS: styled-components 5.1.1
 - Icons: react-native-vector-icons
 - REDUX ? Sorry I prefer Hooks + Context Api Over redux for state management. Functional Components
 
@@ -55,7 +55,11 @@ https://reactnavigation.org/
 
 Errors comes while running iOS app due to duplicate of vector-icons fonts then follow: https://github.com/oblador/react-native-vector-icons/issues/1074
 
-![](./screenshots/demo.gif)
+<!-- ![](./screenshots/demo.gif) -->
+
+<div>
+<img src="./screenshots/demo.gif" alt="Gallery Modal" width="277" height="508">
+</div>
 
 <div>
 <img src="./screenshots/1.png" alt="Login" width="277" height="508">
@@ -69,5 +73,4 @@ Errors comes while running iOS app due to duplicate of vector-icons fonts then f
 
 <div>
 <img src="./screenshots/4.png" alt="Gallery Modal" width="277" height="508">
-
 </div>
