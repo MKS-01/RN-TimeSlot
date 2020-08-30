@@ -1,11 +1,21 @@
 import React from 'react';
-import {Text} from 'react-native';
-import {RootSafeAreaView} from '_styles/rootView';
+import {useAuthValue} from '_services/store/auth-context';
+import {RootSafeAreaView, RootView} from '_styles/rootView';
+import {Container, Button, BtnText} from '_styles/PhotoGallery';
 
 const Login = () => {
+  const [username, setUsername] = React.useState('test');
+  const [password, setPassword] = React.useState('test');
+  const {signIn} = useAuthValue();
   return (
     <RootSafeAreaView>
-      <Text>Login</Text>
+      <RootView>
+        <Container>
+          <Button onPress={() => signIn({username, password})}>
+            <BtnText>Login</BtnText>
+          </Button>
+        </Container>
+      </RootView>
     </RootSafeAreaView>
   );
 };

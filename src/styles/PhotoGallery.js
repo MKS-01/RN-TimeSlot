@@ -16,7 +16,7 @@ export const Container = styled.View`
 `;
 
 export const Button = styled.TouchableOpacity`
-  padding: ${scaleSize(15)}px ${scaleSize(20)}px;
+  padding: ${scaleSize(15)}px ${scaleSize(30)}px;
   background-color: #2e7d32;
   border-radius: 10px;
 `;

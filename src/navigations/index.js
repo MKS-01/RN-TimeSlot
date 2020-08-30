@@ -127,7 +127,7 @@ export default function App() {
       <NavigationContainer ref={navigationRef}>
         {state.isLoading ? (
           <SplashScreen />
-        ) : state.userToken === 'null' ? (
+        ) : state.userToken == null ? (
           <AuthNavigator firstLaunch={firstLaunch} />
         ) : (
           <StateProvider initialState={initialState} reducer={reducer}>

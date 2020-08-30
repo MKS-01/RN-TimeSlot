@@ -1,5 +1,4 @@
 import React from 'react';
-import {View} from 'react-native';
 import {RootSafeAreaView, RootView} from '_styles/rootView';
 import {Text, Container, Button, BtnText} from '_styles/PhotoGallery';
 
