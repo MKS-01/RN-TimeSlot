@@ -4,6 +4,7 @@ import {Input, TouchableBTN, Text, BTNContainer} from '_styles/DetailsModal';
 import {GRAY_DARK} from '_styles/colors';
 import * as RootNavigation from '_navigations/root-navigation';
 import {useStateValue} from '_services/store';
+import {storeValue} from '_utils/localStorage';
 
 const DetailsInput = ({data}) => {
   const [firstName, setFirstName] = useState('');
@@ -75,7 +76,7 @@ const BTN = (props) => {
   const {data} = props;
 
   const onCancel = () => {
-    RootNavigation.goBack('Home');
+    RootNavigation.goBack();
   };
 
   const onSave = (data) => {
@@ -91,6 +92,9 @@ const BTN = (props) => {
       type: 'addDetails',
       newSlotData: tempData,
     });
+
+    console.log(JSON.stringify(tempData));
+    storeValue('cardData', JSON.stringify(tempData));
 
     RootNavigation.navigate('Home');
   };
